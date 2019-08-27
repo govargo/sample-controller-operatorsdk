@@ -28,8 +28,28 @@ spec:
         metadata:
           type: object
         spec:
+          properties:
+            deploymentName:
+              description: the name of deployment which is owned by foo
+              format: string
+              type: string
+            replicas:
+              description: the replicas of deployment which is owned by foo
+              format: int32
+              minimum: 1
+              type: integer
+          required:
+          - deploymentName
+          - replicas
           type: object
         status:
+          properties:
+            availableReplicas:
+              description: this is equal deployment.status.availableReplicas
+              format: int32
+              type: integer
+          required:
+          - availableReplicas
           type: object
   version: v1alpha1
   versions:
