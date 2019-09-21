@@ -51,3 +51,12 @@ $ kubectl apply -f deploy/crds/samplecontroller_v1alpha1_foo_cr.yaml
 This project is inspired by
 
  * https://github.com/kubernetes/sample-controller
+
+## Update History
+
+2019/09/21 Modified mistaken word [foo_controller.go](pkg/controller/foo/foo_controller.go#L179)
+
+
+|Before|After|
+|:---:|:---:|
+|reqLogger.Error(err, "failed to get Deployment for Foo resource")|reqLogger.Error(err, "failed to update Deployment for Foo resource")|

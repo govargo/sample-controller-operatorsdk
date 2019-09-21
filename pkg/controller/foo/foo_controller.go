@@ -176,7 +176,7 @@ func (r *ReconcileFoo) Reconcile(request reconcile.Request) (reconcile.Result, e
 		reqLogger.Info("Deployment replicas is not equal Foo replicas. reconcile this...")
 		// Update deployment spec
 		if err := r.client.Update(ctx, newDeployment(foo)); err != nil {
-			reqLogger.Error(err, "failed to get Deployment for Foo resource")
+			reqLogger.Error(err, "failed to update Deployment for Foo resource")
 			// Error updating the object - requeue the request.
 			return reconcile.Result{}, err
 		}
